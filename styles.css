@@ -1,14 +1,38 @@
 *{
     margin: 0;
     padding: 0;
-    
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
-
+    font-family: 'Courier New', Courier, monospace;
 }
+
+/* -----------X and O-------------- */
+.cross {
+  background: none;
+  position: relative;
+}
+.cross:after {
+  padding: 10px;
+  color: rgb(88, 3, 84);
+  justify-content: center;
+  content: "\2715";
+  font-weight: 600;
+  text-align: center;  
+}
+
+.circle {
+  background: none;
+  position: relative;
+}
+.circle:after {
+  color: rgb(88, 3, 84);
+  align-content: center;
+  justify-content: center;
+  content: "\3007";
+  font-weight: 600;
+  text-align: center;
+}
+/* ------------------------------- */
 body{
     width:100%;
-    height:100vh;
     background: linear-gradient(
     135deg,
     #fffb82, 
@@ -24,7 +48,7 @@ body{
     #db79f3
     );
     background-size: 300%;
-    animation: bg-animation 5s infinite alternate;
+    animation: bg-animation 15s infinite alternate;
 }
 
 @keyframes bg-animation {
@@ -40,58 +64,86 @@ h1{
     margin: 1rem auto;
     justify-content: center;
 }
+/* ---------------------------------------- */
 section{
-    margin: 2rem;
-    border: 1px solid red;
-}
-.game-grid{
-    display:grid;
-    margin: 2rem auto;
-    max-width:650px;
-    max-height: 650px;
-    padding:2rem;
-    align-self: center;
-    grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr ;
-    font-size: 7rem;
-
-}
-@media only screen and (max-width: 500px){
-    section{
-        margin: 1rem;
-    }
-    .game-grid{
-        margin: 1rem auto;
-        max-width: 400px;
-        padding:1rem;
-        font-size: 5rem;
-        
-    }
-}
-@media only screen and (max-width: 400px){
-    section{
-        margin: .25rem;
-    }
-    .game-grid{
-        margin: 1rem auto;
-        max-width: 12rem;
-        padding:1rem;
-        font-size: 3rem;
-    }
+    margin: 2rem 2rem;
+    border: 1px solid rgb(4, 0, 255);
 }
 .box{
-    display: flex;
-    justify-content: center;
-    
-    
+    text-align: center;
+    height: 9rem;
+    width: 9rem;
+    margin:0;  
 }
 #box1, #box2, #box4, #box5,
 #box7, #box8 {
-    border-bottom: 10px solid black;
+    border-bottom: .5rem solid black;
 }
 
 #box4, #box5,
 #box6 {
-    border-left: 10px solid black;
-    border-right: 10px solid black;
-    padding: 0 15px;
+    border-left: .5rem solid black;
+    border-right: .5rem solid black;
+}    
+
+.game-grid{
+    display:grid;
+    grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr ;
+    margin: 2rem auto;
+    padding:2rem;
+    max-width:28rem;
+    max-height: 28rem;
+    align-self: center;
+    justify-content: center;
+    font-size: 6rem;
+    color: rgb(58, 5, 68);
+    border: 1px solid rgb(81, 255, 0);
+
+}
+@media only screen and (max-width: 600px){
+    section{
+        margin: 1rem;
+    }
+    .box{
+    height: 6.5rem;
+    width: 6.5rem;
+    }   
+    .game-grid{
+        margin: 1rem auto;
+        max-width: 20rem;
+        max-height: 20rem;
+        padding:1rem;
+        font-size: 4rem;
+    }
+}
+@media only screen and (max-width: 400px){
+    section{
+        margin: .5rem;
+    }
+    .box{
+    height: 4rem;
+    width: 4rem;
+   }
+    .game-grid{
+        margin: .5rem auto;
+        max-width: 12.5rem;
+        max-height: 12.5rem;
+        padding:.5rem;
+        font-size: 2.5rem;
+    }
+    .signature{
+    width: 150px;
+    height: auto;
+}
+}
+
+
+
+/* -----------FOOTER------------ */
+.signature{
+    transition: 200ms ease-in-out;
+}
+
+.signature:hover{
+    filter: drop-shadow(0 0 2px rgb(255, 0, 212));
 }
