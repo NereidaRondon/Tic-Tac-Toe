@@ -8,31 +8,34 @@
 .cross {
   background: none;
   position: relative;
+  color: rgb(66, 5, 68);
+  filter: drop-shadow(3px 3px 3px rgb(36, 36, 36));
 }
 .cross:after {
   padding: 10px;
-  color: rgb(88, 3, 84);
   justify-content: center;
   content: "\2715";
-  font-weight: 600;
+  
   text-align: center;  
 }
 
 .circle {
   background: none;
   position: relative;
+  color: rgb(235, 39, 13);
+  filter: drop-shadow(3px 3px 3px rgb(36, 36, 36));
 }
 .circle:after {
-  color: rgb(88, 3, 84);
   align-content: center;
   justify-content: center;
   content: "\3007";
-  font-weight: 600;
+  
   text-align: center;
 }
 /* ------------------------------- */
 body{
     width:100%;
+    height: 100vh;
     background: linear-gradient(
     135deg,
     #fffb82, 
@@ -63,6 +66,12 @@ h1{
     display:flex;
     margin: 1rem auto;
     justify-content: center;
+    font-size: 3rem;
+}
+@media only screen and (max-width: 400px){
+    h1{    
+    font-size: 1.5rem;
+}
 }
 /* ---------------------------------------- */
 section{
@@ -75,31 +84,37 @@ section{
     width: 9rem;
     margin:0;  
 }
-#box1, #box2, #box4, #box5,
-#box7, #box8 {
-    border-bottom: .5rem solid black;
+#box1, #box2, #box3, #box4, 
+#box5, #box6 {
+    border-bottom: .25rem solid black;
 }
 
-#box4, #box5,
-#box6 {
-    border-left: .5rem solid black;
-    border-right: .5rem solid black;
+#box2, #box5,
+#box8 {
+    border-left: .25rem solid black;
+    border-right: .25rem solid black;
 }    
 
 .game-grid{
     display:grid;
-    grid-template: 1fr 1fr 1fr/ 1fr 1fr 1fr ;
+    grid-template: 9rem 9rem 9rem/ 9rem 9rem 9rem;
     margin: 2rem auto;
     padding:2rem;
-    max-width:28rem;
-    max-height: 28rem;
+    width:28rem;
+    height: 28rem;
     align-self: center;
+    align-content: space-around;
     justify-content: center;
+    align-items: center;
+    justify-items: center;
     font-size: 6rem;
     color: rgb(58, 5, 68);
     border: 1px solid rgb(81, 255, 0);
 
 }
+/* .game-grid > * {
+  border: 2px solid rgb(0, 0, 0);
+} */
 @media only screen and (max-width: 600px){
     section{
         margin: 1rem;
@@ -109,6 +124,7 @@ section{
     width: 6.5rem;
     }   
     .game-grid{
+        grid-template: 6.5rem 6.5rem 6.5rem/ 6.5rem 6.5rem 6.5rem;
         margin: 1rem auto;
         max-width: 20rem;
         max-height: 20rem;
@@ -125,11 +141,12 @@ section{
     width: 4rem;
    }
     .game-grid{
+        grid-template: 4rem 4rem 4rem / 4rem 4rem 4rem;
         margin: .5rem auto;
-        max-width: 12.5rem;
-        max-height: 12.5rem;
+        max-width: 12rem;
+        max-height: 12rem;
         padding:.5rem;
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     .signature{
     width: 150px;
@@ -140,6 +157,9 @@ section{
 
 
 /* -----------FOOTER------------ */
+footer{
+    margin-top: 3rem;
+}
 .signature{
     transition: 200ms ease-in-out;
 }
