@@ -5,13 +5,13 @@
 }
 
 /* -----------X and O-------------- */
-.cross {
+.Player-X {
   background: none;
   position: relative;
   color: rgb(66, 5, 68);
   filter: drop-shadow(3px 3px 3px rgb(36, 36, 36));
 }
-.cross:after {
+.Player-X:after {
   padding: 10px;
   justify-content: center;
   content: "\2715";
@@ -19,13 +19,13 @@
   text-align: center;  
 }
 
-.circle {
+.Player-O {
   background: none;
   position: relative;
   color: rgb(235, 39, 13);
   filter: drop-shadow(3px 3px 3px rgb(36, 36, 36));
 }
-.circle:after {
+.Player-O:after {
   align-content: center;
   justify-content: center;
   content: "\3007";
@@ -38,20 +38,20 @@ body{
     height: 100vh;
     background: linear-gradient(
     135deg,
-    #fffb82, 
+    #eeea7b, 
     #fdda6f, 
-    #ffc560, 
-    #ffb26b, 
-    #ff9b74, 
+    #ffc96d, 
+    #ffb26b,
+    #ffaa5b, 
+    #ff9b74,
     #ff8485, 
     #ff6f9a, 
     #ff6cba, 
-    #ff74d8, 
-    #ef76e6, 
-    #db79f3
+    #ee6eca,  
+    #cc6ee4
     );
     background-size: 300%;
-    animation: bg-animation 15s infinite alternate;
+    animation: bg-animation 12s infinite alternate;
 }
 
 @keyframes bg-animation {
@@ -76,7 +76,7 @@ h1{
 /* ---------------------------------------- */
 section{
     margin: 2rem 2rem;
-    border: 1px solid rgb(4, 0, 255);
+    /* border: 1px solid rgb(4, 0, 255); */
 }
 .box{
     text-align: center;
@@ -103,13 +103,13 @@ section{
     width:28rem;
     height: 28rem;
     align-self: center;
-    align-content: space-around;
+    align-content: center;
     justify-content: center;
     align-items: center;
     justify-items: center;
     font-size: 6rem;
     color: rgb(58, 5, 68);
-    border: 1px solid rgb(81, 255, 0);
+    /* border: 1px solid rgb(81, 255, 0); */
 
 }
 /* .game-grid > * {
