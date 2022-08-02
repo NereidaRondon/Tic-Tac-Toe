@@ -3,27 +3,30 @@
 //take turns, clicking on the grid
 let players =['Player-X', 'Player-O'];
 let turns = 0;
-let i= 0;
-let currentPlayer = players[i];
+
+let currentPlayer = 'Player-X';
 
 $('#currentPlayer').text(currentPlayer);
 
-    let player=(symbol)=>{
+    let player=(player)=>{
         $(function(){
             $('.box').one('click', function(){
                 var boxId= $(this).attr('box-Id');
-                $('#'+boxId).addClass(symbol);               
+                $('#'+boxId).addClass(player);               
                   
-                if(currentPlayer==='Player-X'){
-                    currentPlayer='Player-O';
-                  } else{
-                    currentPlayer='Player-X';
-                  };
+
             });
         });
     };
-    player('cross');
+    player(currentPlayer);
     
+    if(currentPlayer==='Player-X'){
+    currentPlayer='Player-O';
+    player(currentPlayer);
+    } else{
+    currentPlayer='Player-X';
+    player(currentPlayer);
+    };
 
 
 
