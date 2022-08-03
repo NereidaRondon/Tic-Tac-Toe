@@ -1,94 +1,81 @@
 // Player 1 is X
 // Player 2 is O
 //take turns, clicking on the grid
-let players =['Player-X', 'Player-O'];
+let X ='Player-X';
+let O = 'Player-O';
 let turns = 0;
-
+let div = $('.box');
 let currentPlayer = 'Player-X';
+let display = $('#currentPlayer').text(currentPlayer);
 
-$('#currentPlayer').text(currentPlayer);
-
-    let player=(player)=>{
-        $(function(){
-            $('.box').one('click', function(){
-                var boxId= $(this).attr('box-Id');
-                $('#'+boxId).addClass(player);               
-                  
-
-            });
+        let click=(player)=>{
+            console.log(player);
+            $(function(){
+                $('.box').one('click', function(event){
+            var boxId= $(this).attr('box-Id');
+            $('#'+boxId).addClass(player); 
+            console.log(`${player} clicked`);
+            turns++;
+            playerNow();             
+            // $(this).off( event ); 
+            
+            
         });
-    };
-    player(currentPlayer);
+        
+    });
     
-    if(currentPlayer==='Player-X'){
-    currentPlayer='Player-O';
-    player(currentPlayer);
-    } else{
-    currentPlayer='Player-X';
-    player(currentPlayer);
-    };
-
-
-
-    // let playerX=()=>{
-    //     $(function(){
-    //         $('.box').one('click', function(){
-    //             var boxId= $(this).attr('box-Id');
-    //             $('#'+boxId).addClass("cross");               
-    //               playerO();
-    //         });
-    //     });
-    // }       
     
-    // let playerO=()=>{
-    //     $(function(){
-    //         $('.box').one('click', function(){
-    //             var boxId= $(this).attr('box-Id');
-    //             $('#'+boxId).addClass("circle");
-    //            playerX();
-    //         });
-    //     });  
-    // }  
+};
 
-// console.log(currentPlayer);
-//     if(turns === 8){
-//     currentPlayer='Game Over';
-//     } else if (currentPlayer === 'Player X'){
-//         i=0;
-//         console.log(currentPlayer);
-//         let playerX=()=>{
-//         $(function(){
-//             $('.box').one('click', function(){
-//                 var boxId= $(this).attr('box-Id');
-//                 $('#'+boxId).addClass("cross");               
-                  
-//             });
-//         });
-//     } 
-//         playerX();
-//         console.log(i);
-//         turns++;
-//         console.log(turns);
-//         currentPlayer = players[1];
-//         console.log(currentPlayer);
-//         console.log(`player O's turn`);
-//         console.log(currentPlayer);
+click(currentPlayer);
 
-//     }else{
-//         i=1;
-//         turns++;
-//         console.log(turns);
-//         let playerO=()=>{
-//             $(function(){
-//                 $('.box').one('click', function(){
-//                     var boxId= $(this).attr('box-Id');
-//                     $('#'+boxId).addClass("circle");
-                   
-//                 });
-//             });  
-//         } 
-//         playerO();
-//         currentPlayer = players[0];
-//         console.log(`player X's turn`);
-//     };
+
+
+let playerNow =()=>{
+
+    if(turns === 8){
+       alert(`Game Over`);
+        document.addEventListener("click", handler, true);
+        function handler(div) {
+            div.stopPropagation();
+            div.preventDefault();
+        }
+    }
+    else if(currentPlayer==='Player-X'){
+        currentPlayer = 'Player-O';
+        console.log(`changed to player-O = ${currentPlayer}`);
+        click(currentPlayer);
+        console.log(turns);
+    } else {
+        currentPlayer==='Player-X';
+        console.log(`changed to player-X = ${currentPlayer}`);
+        click(currentPlayer);
+        console.log(turns);
+    };
+};
+        
+        
+
+// div.addEventListener('click', () => {
+//     if(currentPlayer==='Player-X'){
+//         currentPlayer = 'Player-O';
+//         console.log(`changed to player-O`);
+//     } else {
+//         currentPlayer==='Player-X';
+//         console.log(`changed to player-X`);
+//     }
+// });
+
+// $(document).ready(function(){
+//   $("div").click(function(){
+//     if(currentPlayer==='Player-X'){
+//         currentPlayer = 'Player-O';
+//         console.log(`changed to player-O`);
+//     } else {
+//         currentPlayer==='Player-X';
+//         console.log(`changed to player-X`);
+//     }
+//   });
+// });
+
 
