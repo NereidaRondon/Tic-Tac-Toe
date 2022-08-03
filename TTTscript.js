@@ -20,10 +20,12 @@ let changePlayer=()=> {
     else if(currentPlayer===x){
         currentPlayer = o;
         console.log(`changed to player-O = ${currentPlayer}`);
+        display = $('#currentPlayer').text(currentPlayer);
        
     } else {
         currentPlayer=x;
         console.log(`changed to player-X = ${currentPlayer}`);
+        display = $('#currentPlayer').text(currentPlayer);
     };
 
     console.log(`${currentPlayer} is the current player`);
