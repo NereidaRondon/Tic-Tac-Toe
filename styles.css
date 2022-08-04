@@ -4,11 +4,11 @@
     font-family: 'Courier New', Courier, monospace;
 }
 /* ------LINES------ */
- .line {
+  /* .line {
   position:absolute;
   margin: auto;
-  /* background-color: none; */
-  background-color: rgb(255, 0, 119);
+  background-color: none;
+   
   z-index: 10;
   transition: 200ms ease-in;
 
@@ -21,7 +21,7 @@
   width: 400px;
   height: 10px;
 }
-/* Vertical */
+
  .vline {
   width: 10px;
   height: 400px;
@@ -58,7 +58,7 @@
   bottom:0%;
   left:0%;
   right:0%;
-}
+}  */
 
 /* -----------X and O-------------- */
 .Player-X {
@@ -133,21 +133,24 @@ section{
     margin: 2rem 2rem;
     /* border: 1px solid rgb(4, 0, 255); */
 }
-.box{
-    text-align: center;
-    height: 9rem;
-    width: 9rem;
-    margin:0;  
-}
+
 #box1, #box2, #box3, #box4, 
 #box5, #box6 {
     border-bottom: .25rem solid black;
+    text-align: center;
+    height: 9rem;
+    width: 9rem;
+    margin:0; 
 }
 
 #box2, #box5,
 #box8 {
     border-left: .25rem solid black;
     border-right: .25rem solid black;
+    text-align: center;
+    height: 9rem;
+    width: 9rem;
+    margin:0; 
 }    
 
 .game-grid{
