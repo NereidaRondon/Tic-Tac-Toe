@@ -3,6 +3,62 @@
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
 }
+/* ------LINES------ */
+ .line {
+  position:absolute;
+  margin: auto;
+  /* background-color: none; */
+  background-color: rgb(255, 0, 119);
+  z-index: 10;
+  transition: 200ms ease-in;
+
+} 
+.line:after{
+  background-color: rgb(255, 0, 119);
+  filter: drop-shadow(3px 3px 3px rgb(36, 36, 36));
+}
+.hline {
+  width: 400px;
+  height: 10px;
+}
+/* Vertical */
+ .vline {
+  width: 10px;
+  height: 400px;
+  top:25%;
+  left:0%;
+  
+}
+.col1{
+
+}
+.col2{
+  top:0%;
+  bottom:0%;
+  left:0%;
+  right:0%;
+}
+.col3{
+
+}
+.row1{
+  top:-35%;
+  bottom:0%;
+  left:0%;
+  right:0%;
+}
+.row2{
+  top:0%;
+  bottom:0%;
+  left:0%;
+  right:0%;
+}
+.row3{
+  top:35%;
+  bottom:0%;
+  left:0%;
+  right:0%;
+}
 
 /* -----------X and O-------------- */
 .Player-X {
@@ -15,7 +71,6 @@
   padding: 10px;
   justify-content: center;
   content: "\2715";
-  
   text-align: center;  
 }
 
@@ -112,9 +167,7 @@ section{
     /* border: 1px solid rgb(81, 255, 0); */
 
 }
-/* .game-grid > * {
-  border: 2px solid rgb(0, 0, 0);
-} */
+
 @media only screen and (max-width: 600px){
     section{
         margin: 1rem;
