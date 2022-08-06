@@ -149,8 +149,8 @@ section{
         margin: 1rem;
     }
     .box{
-    height: 6.5rem;
-    width: 6.5rem;
+        height: 6.5rem;
+        width: 6.5rem;
     }   
     .game-grid{
         grid-template: 6.5rem 6.5rem 6.5rem/ 6.5rem 6.5rem 6.5rem;
@@ -161,9 +161,13 @@ section{
         font-size: 5rem;
     }
     button{
-    width: 5rem;
-    height: 3rem;   
-    font-size: 1.5rem;
+        width: 5rem;
+        height: 3rem;   
+        font-size: 1.5rem;
+    }
+    .signature{
+        width: 200px;
+        height: auto;
     }
 
 }
