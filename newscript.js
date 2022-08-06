@@ -61,22 +61,30 @@ let changePlayer=()=> {
 let winEvents = [[box0, box1, box2], [box3, box4,box5], [box6, box7, box8], [box0, box3, box6], [box1, box4, box7], [box2, box5, box8], [box0, box4, box8], [box2, box4, box6]];
 
 let checkWinner=(currentPlayer, a, b, c)=>{
-    console.log(`Who is the player BEFORE IF: ${currentPlayer}`);
-
+   
     if(a.html()===currentPlayer && a.html()===b.html() && b.html()===c.html()){
         
         console.log(`Who is the player IN IF: ${currentPlayer}`);
         
-        $('#currentPlayer').text(`Player ${currentPlayer} wins!!!`);
+        setInterval(()=>$('#currentPlayer').text(`Player ${currentPlayer} wins!!!`, 3000));
         $(a).css("background-color", "rgba(255, 255, 255, 0.25)");
         $(b).css("background-color", "rgba(255, 255, 255, 0.25)");
         $(c).css("background-color", "rgba(255, 255, 255, 0.25)");
-
+        console.log(`FOUND A WINNER`);
+        
         //need to disable all other divs
-        //need to prolong winner alert on screen
+        $(".box").addClass('disabled');
         //show reset button to start all over again
-         
-    };  
+
+        
+        $('#currentPlayer').text(`GAME OVER`);
+
+    
+        //return;
+    };    
+  
+    
+    
 }; 
 
 
@@ -93,7 +101,7 @@ let symbolOf=(currentPlayer)=>{
         $(`#${id}`).addClass('disabled')
 
         if(currentPlayer===o){
-          $(`#${id}`).css("color", "rgb(201, 42, 3)");
+          $(`#${id}`).css("color", "rgb(75, 5, 68)");
         };
         
         $(`#${id}`).on('click', false); 
@@ -103,23 +111,16 @@ let symbolOf=(currentPlayer)=>{
             
                 console.log(`---------------------------------`);  
                 checkWinner(currentPlayer, ...winEvents[0]);
-                console.log(`0 checked`);
                 checkWinner(currentPlayer, ...winEvents[1]);
-                 console.log(`1 checked`);
                 checkWinner(currentPlayer, ...winEvents[2]);
-                 console.log(`2 checked`);
                 checkWinner(currentPlayer, ...winEvents[3]);
-                 console.log(`3 checked`);
                 checkWinner(currentPlayer, ...winEvents[4]);
-                 console.log(`4 checked`);
                 checkWinner(currentPlayer, ...winEvents[5]);
-                 console.log(`5 checked`);
                 checkWinner(currentPlayer, ...winEvents[6]);
-                 console.log(`6 checked`);
                 checkWinner(currentPlayer, ...winEvents[7]);
-                 console.log(`7 checked`);
-                 console.log(`---------------------------------`);
-            console.log(`THIS ↓ because NO WINNER`);
+                
+                console.log(`---------------------------------`);
+            console.log(`NO WINNER FOUND GO TO NEXT PLAYER`);
             changePlayer();   
 
         }else{
