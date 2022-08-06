@@ -7,30 +7,36 @@
     <title>Tic-Tac-Toe</title>
 
     <link rel="stylesheet" href="styles.css">
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    
 </head>
 <body>
 
 <header>
     <h1>Tic-Tac-Toe</h1>
 </header>
+<button id="startBtn" onclick="startGame(x)">START</button>
 <section>
-<div class="line vline"></div>
+
     <h2 id="currentPlayer"></h2>
     <main class="game-grid">
 
-            <div id="box1" box-Id= "box1" class="" onclick="symbolOf(currentPlayer)"></div>
-            <div id="box2" box-Id= "box2" class="" onclick="symbolOf(currentPlayer)"></div>
-            <div id="box3" box-Id= "box3" class="" onclick="symbolOf(currentPlayer)"></div>
 
-            <div id="box4" box-Id= "box4" class="" onclick="symbolOf(currentPlayer)"></div>
-            <div id="box5" box-Id= "box5" class="" onclick="symbolOf(currentPlayer)"></div>
-            <div id="box6" box-Id= "box6" class="" onclick="symbolOf(currentPlayer)"></div>
+            <div id="box0" data-index="0" class="box" onclick="symbolOf(currentPlayer)"></div>
+            <div id="box1" data-index="1" class="box" onclick="symbolOf(currentPlayer)"></div>
+            <div id="box2" data-index="2" class="box" onclick="symbolOf(currentPlayer)"></div>
 
-            <div id="box7" box-Id= "box7" class="" onclick="symbolOf(currentPlayer)"></div>
-            <div id="box8" box-Id= "box8" class="" onclick="symbolOf(currentPlayer)"></div>
-            <div id="box9" box-Id= "box9" class="" onclick="symbolOf(currentPlayer)"></div>
+            <div id="box3" data-index="3" class="box" onclick="symbolOf(currentPlayer)"></div>
+            <div id="box4" data-index="4" class="box" onclick="symbolOf(currentPlayer)"></div>
+            <div id="box5" data-index="5" class="box" onclick="symbolOf(currentPlayer)"></div>
+
+            <div id="box6" data-index="6" class="box" onclick="symbolOf(currentPlayer)"></div>
+            <div id="box7" data-index="7" class="box" onclick="symbolOf(currentPlayer)"></div>
+            <div id="box8" data-index="8" class="box" onclick="symbolOf(currentPlayer)"></div>
 
     </main>    
 </section>
