@@ -37,14 +37,34 @@ let changePlayer=()=> {
         function handler(div) {
             div.stopPropagation();
             div.preventDefault();
-            setTimeout(()=> $('#currentPlayer').text(`GAME OVER`), 1500);
+            setTimeout(()=> $('#currentPlayer').text(`GAME OVER`), 1000);
         }          
     } else if(currentPlayer===x){
         currentPlayer = o;
         console.log(`changed to player-${currentPlayer}`);
-       
         
-         
+        let cpu=(num)=>{
+            let div =`#box${num}`;
+            console.log(div);
+            
+
+            if($(div).hasClass('disabled')){
+                cpu(getRandomInt(9));
+
+            } else{
+                $(div).text(o);
+                $(div).addClass('disabled')
+                $(div).css("color", "rgb(75, 5, 68)");
+
+            };   
+        };
+        let getRandomInt=(max)=> {
+            return Math.floor(Math.random() * max);
+        }
+         setTimeout(()=> cpu(getRandomInt(9)), 1000);
+
+         setTimeout(()=>changePlayer(), 2000);
+
     } else {
         currentPlayer=x;
         console.log(`changed to player-${currentPlayer}`);
@@ -63,9 +83,7 @@ let winEvents = [[box0, box1, box2], [box3, box4,box5], [box6, box7, box8], [box
 let checkWinner=(currentPlayer, a, b, c)=>{
    
     if(a.html()===currentPlayer && a.html()===b.html() && b.html()===c.html()){
-        
-        console.log(`Who is the player IN IF: ${currentPlayer}`);
-        
+                
         setInterval(()=>$('#currentPlayer').text(`Player ${currentPlayer} wins!!!`, 3000));
         $(a).css("background-color", "rgba(255, 255, 255, 0.25)");
         $(b).css("background-color", "rgba(255, 255, 255, 0.25)");
@@ -80,7 +98,7 @@ let checkWinner=(currentPlayer, a, b, c)=>{
         $('#currentPlayer').text(`GAME OVER`);
 
     
-        //return;
+        return;
     };    
   
     
@@ -100,12 +118,7 @@ let symbolOf=(currentPlayer)=>{
         $(`#${id}`).text(currentPlayer);
         $(`#${id}`).addClass('disabled')
 
-        if(currentPlayer===o){
-          $(`#${id}`).css("color", "rgb(75, 5, 68)");
-        };
-        
-        $(`#${id}`).on('click', false); 
-            
+         
         if (turns > 4){ 
             console.log(`Before checking winners, player is: ${currentPlayer}`);
             
@@ -121,7 +134,7 @@ let symbolOf=(currentPlayer)=>{
                 
                 console.log(`---------------------------------`);
             console.log(`NO WINNER FOUND GO TO NEXT PLAYER`);
-            changePlayer();   
+            setTimeout(()=>changePlayer(), 1000);   
 
         }else{
             console.log(`THIS ↓ because NOT 5 turns YET`);
@@ -130,51 +143,3 @@ let symbolOf=(currentPlayer)=>{
     });
 };
 
-
-
-
-
-
-
-            // if (turns >= 5){ 
-            //             let checkWinner=(currentPlayer, a, b, c)=>{
-            //                 console.log(`THIS HERE`);
-            //                 console.log(`box${a}`.innerHTML===currentPlayer)
-
-            //                 if(`box${a}`.innerHTML===currentPlayer && `box${a}`.innerHTML===`box${b}`.innerHTML && `box${b}`.innerHTML===`box${c}`.innerHTML){
-                                
-            //                     $('#currentPlayer').text(`Player ${currentPlayer} wins!!!`);
-            //                     $(`#box${a}`).css("background-color", "rgba(255, 255, 255, 0.25)");
-            //                     $(`#box${b}`).css("background-color", "rgba(255, 255, 255, 0.25)");
-            //                     $(`#box${c}`).css("background-color", "rgba(255, 255, 255, 0.25)");
-                                
-            //                 };
-            //             };
-                            
-            //                 checkWinner(...winEvents[0]);
-            //                 checkWinner(currentPlayer, ...winEvents[1]);
-            //                 checkWinner(currentPlayer, ...winEvents[2]);
-            //                 checkWinner(currentPlayer, ...winEvents[3]);
-            //                 checkWinner(currentPlayer, ...winEvents[4]);
-            //                 checkWinner(currentPlayer, ...winEvents[5]);
-            //                 checkWinner(currentPlayer, ...winEvents[6]);
-            //                 checkWinner(currentPlayer, ...winEvents[7]);
-            //         };
-
-
-            //             let checkWinner=(currentPlayer, a, b, c)=>{
-            //     console.log(`THIS HERE`);
-            //     console.log(currentPlayer);
-            //     console.log(a.innerHTML);
-
-
-            //     if(a.innerHTML===currentPlayer && a.innerHTML===b.innerHTML && b.innerHTML===c.innerHTML){
-                    
-            //         $('#currentPlayer').text(`Player ${currentPlayer} wins!!!`);
-            //         $(a).css("background-color", "rgba(255, 255, 255, 0.25)");
-            //         $(b).css("background-color", "rgba(255, 255, 255, 0.25)");
-            //         $(c).css("background-color", "rgba(255, 255, 255, 0.25)");
-                    
-            //     };
-                
-            // };
