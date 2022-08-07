@@ -38,33 +38,8 @@ button:hover{
     rgb(255, 255, 255) 100%
     ); 
 }
-/* -----------X and O-------------- */
-/* .Player-X {
-  background: none;
-  position: relative;
-  color: rgb(66, 5, 68);
-  filter: drop-shadow(3px 3px 3px rgb(36, 36, 36));
-}
-.Player-X:after {
-  padding: 10px;
-  justify-content: center;
-  content: "\2715";
-  text-align: center;  
-}
 
-.Player-O {
-  background: none;
-  position: relative;
-  color: rgb(201, 42, 3);
-  filter: drop-shadow(3px 3px 3px rgb(36, 36, 36));
-}
-.Player-O:after {
-  align-content: center;
-  justify-content: center;
-  content: "\3007";
-  
-  text-align: center;
-} */
+
 /* ------------------------------- */
 body{
     width:100%;
@@ -203,7 +178,9 @@ section{
     cursor: not-allowed;
     pointer-events: none;
 }
-
+.disabledX {
+    pointer-events: none;
+}
 /* -----------FOOTER------------ */
 footer{
     margin-top: 3rem;
@@ -215,3 +192,58 @@ footer{
 .signature:hover{
     filter: drop-shadow(0 0 2px rgb(255, 0, 212));
 }
+
+/* -----CONFETTI----- */
+html {
+  overflow: hidden;  
+}
+
+.confetti {
+  width: 15px;
+  height: 15px;
+  background: rgb(38, 0, 255);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  opacity: 1;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  z-index: -1;
+  animation: confetti 10s ease-in infinite;
+}
+
+@keyframes confetti {
+  100% { 
+    top: 100%; 
+    transform: rotate(1100deg);
+  }
+}
+
+
+
+/* -----------X and O-------------- */
+/* .Player-X {
+  background: none;
+  position: relative;
+  color: rgb(66, 5, 68);
+  filter: drop-shadow(3px 3px 3px rgb(36, 36, 36));
+}
+.Player-X:after {
+  padding: 10px;
+  justify-content: center;
+  content: "\2715";
+  text-align: center;  
+}
+
+.Player-O {
+  background: none;
+  position: relative;
+  color: rgb(201, 42, 3);
+  filter: drop-shadow(3px 3px 3px rgb(36, 36, 36));
+}
+.Player-O:after {
+  align-content: center;
+  justify-content: center;
+  content: "\3007";
+  
+  text-align: center;
+} */
