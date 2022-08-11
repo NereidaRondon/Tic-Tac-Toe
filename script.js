@@ -3,17 +3,33 @@ let o = 'o';
 let turns = 0;
 $('#resetBtn').hide();
 let currentPlayer;
-
+$('#currentPlayer').hide();
 $(".box").addClass('disabled');
 
 let startGame=()=>{
     $('#startBtn').hide();
     $(".box").removeClass('disabled');
+    $('#currentPlayer').removeAttr('hidden');
+    $('#currentPlayer').show();
     currentPlayer=x;
     $('#currentPlayer').text(`Player ${currentPlayer}, START!`);
 };
+
 let confetti = document.querySelectorAll('.confetti'),
       rate = 500; //in milliseconds
+
+let addLoserfetti=()=> {
+  for(let i=0;i<100;i++){
+    let c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random()*100 + '%';
+    c.style.background = 'hsl(310deg,100%,20%)';
+    c.style.animationDuration = (Math.random()*3) + 9 + 's';
+    c.style.animationDelay = Math.random()*10 + 's';
+    document.body.appendChild(c)
+  };
+};
+
 let addConfetti=()=> {
   for(var i=0;i<100;i++){
     var c = document.createElement('div');
@@ -25,6 +41,8 @@ let addConfetti=()=> {
     document.body.appendChild(c)
   };
 };
+
+
 let box0 = $("#box0");
 let box1 = $("#box1");
 let box2 = $("#box2");
@@ -39,7 +57,7 @@ let box8 = $("#box8");
 //6 7 8
 let winEvents = [
     [box0, box1, box2], 
-    [box3, box4,box5], 
+    [box3, box4, box5], 
     [box6, box7, box8], 
     [box0, box3, box6], 
     [box1, box4, box7], 
@@ -61,19 +79,24 @@ let checkWinner=(currentPlayer, a, b, c)=>{
         $(".box").addClass('disabled');
         //show reset button to start all over again
         $('#resetBtn').show();
-        addConfetti();
+        if (currentPlayer===x){
+            addConfetti();
+        }else{
+            addLoserfetti();
+        };
+        
         return;
     };   
 }; 
 //changes players from x to o and vice versa
 let changePlayer=()=> {
-    setTimeout(()=> $('#currentPlayer').text(`Player ${currentPlayer}`), 500);
+    setTimeout(()=> $('#currentPlayer').text(`Player ${currentPlayer}`), 200);
     console.log(`Entered changePlayer Function`);
 
     if(turns===9){       
         //need to disable all other divs
         $(".box").addClass('disabled');
-        setInterval(()=>$('#currentPlayer').text(`Tied! GAME OVER`), 2000);
+        setInterval(()=>$('#currentPlayer').text(`Tied! GAME OVER`), 500);
         //show reset button to start all over again
         $('#resetBtn').show();
         return;
@@ -99,7 +122,7 @@ let changePlayer=()=> {
         let getRandomInt=(max)=> {
             return Math.floor(Math.random() * max);
         };  
-        setTimeout(()=> cpu(getRandomInt(9)), 500);
+        setTimeout(()=> cpu(getRandomInt(9)), 300);
         
         let check =()=>{
             console.log(`Check if ${currentPlayer} WON???`);

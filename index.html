@@ -22,13 +22,13 @@
 <body>
 
 <header>
-    <h1>Tic-Tac-Toe</h1>
+    <h1 class="title">Tic-Tac-Toe</h1>
 </header>
-<button type="button" id="resetBtn" onClick="document.location.reload(true)" >RESET</button>
-<button type="button" id="startBtn" onclick="startGame(x)">START</button>
+
 <section>
 
-    <h2 class="alert alert-primary" role="alert" id="currentPlayer"></h2>
+    <h2 class="alert alert-primary" role="alert" id="currentPlayer" hidden></h2>
+
     <main class="game-grid">
 
 
@@ -44,7 +44,12 @@
             <div id="box7" data-index="7" class="box" onclick="symbolOf(currentPlayer)"></div>
             <div id="box8" data-index="8" class="box" onclick="symbolOf(currentPlayer)"></div>
 
-    </main>    
+    </main> 
+    <!----- BUTTONS ------>
+    <button class="mybtn" type="button" id="resetBtn" onClick="document.location.reload(true)" >RESET</button>
+    
+    <button class="mybtn" type="button" id="startBtn" onclick="startGame(x)">START</button>
+
 </section>
 
     <footer>
