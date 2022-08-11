@@ -232,6 +232,24 @@ html {
   }
 }
 
+.loserfetti {
+  font-size: 30px;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  opacity: 1;
+  z-index: -1;
+  animation: poopfetti 30s ease-in infinite;
+}
+
+@keyframes poopfetti {
+  100% { 
+    top: 100%; 
+    translateY(300px);
+  }
+}
+
+
 
 
 /* -----------X and O-------------- */
