@@ -3,14 +3,12 @@
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
 }
-
 #currentPlayer{
     display:flex;
     margin: auto;
     font-weight: bold;
     justify-content: center;
 }
-
 .mybtn{
     display: flex;
     margin: .5rem auto;
@@ -39,8 +37,6 @@
     rgb(255, 255, 255) 100%
     ); 
 }
-
-
 /* ------------------------------- */
 body{
     width:100%;
@@ -75,7 +71,6 @@ h1.title{
     h1{    
     font-size: 1.5rem;
     }
-
 }
 /* ---------------------------------------- */
 section{
@@ -121,8 +116,6 @@ section{
     justify-items: center;
     font-size: 7rem;
     color: rgb(10, 10, 255); 
-    /* border: 1px solid rgb(81, 255, 0); */
-
 }
 
 @media only screen and (max-width: 600px){
@@ -150,7 +143,10 @@ section{
         width: 200px;
         height: auto;
     }
-
+    h1.title{
+    margin: 1rem auto;
+    font-size: 2.25rem;
+    }
 }
 @media only screen and (max-width: 400px){
     section{
@@ -184,8 +180,7 @@ section{
     h1.title{
     margin: .5rem auto;
     font-size: 1.75rem;
-    
-}
+    }
 }
 
 .disabled {
@@ -248,6 +243,10 @@ html {
     translateY(300px);
   }
 }
+
+
+
+
 
 
 

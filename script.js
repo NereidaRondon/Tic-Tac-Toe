@@ -144,9 +144,9 @@ let changePlayer=()=> {
             checkWinner(currentPlayer, ...winEvents[6]);
             checkWinner(currentPlayer, ...winEvents[7]);
         };        
-        setTimeout(()=> check(), 900);
+        setTimeout(()=> check(), 500);
         console.log(`--------------END OF O --------------`);
-        setTimeout(()=>changePlayer(), 1000);   
+        setTimeout(()=>changePlayer(), 600);   
     } else {
         $(".box").removeClass('disabledX');
         currentPlayer=x;
