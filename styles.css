@@ -240,7 +240,7 @@ html {
 @keyframes poopfetti {
   100% { 
     top: 100%; 
-    translateY(300px);
+    translateY:(200px);
   }
 }
 

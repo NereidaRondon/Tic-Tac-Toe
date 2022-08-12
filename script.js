@@ -19,19 +19,11 @@ let confetti = document.querySelectorAll('.confetti'),
       rate = 500; //in milliseconds
 
 let addLoserfetti=()=> {
-  for(let i=0;i<40;i++){
+ 
+    for(let i=0;i<60;i++){
     let c = document.createElement('div');
     c.className = 'loserfetti';
-    c.innerHTML='☠️';
-    c.style.left = Math.random()*100 + '%';
-    c.style.animationDuration = (Math.random()*3) + 8 + 's';
-    c.style.animationDelay = Math.random()*10 + 's';
-    document.body.appendChild(c)
-  };
-    for(let i=0;i<40;i++){
-    let c = document.createElement('div');
-    c.className = 'loserfetti';
-    c.innerHTML='💥';
+    c.innerHTML='😥';
     c.style.left = Math.random()*100 + '%';
     c.style.animationDuration = (Math.random()*4) + 9 + 's';
     c.style.animationDelay = Math.random()*8 + 's';
